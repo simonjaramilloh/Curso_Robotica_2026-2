@@ -5,8 +5,8 @@ Bienvenido al repositorio oficial de las prácticas de laboratorio del curso de 
 ---
 
 ## 👥 Autores
-- **Juan Simón Jaramillo Henao**[cite: 19]
-- **Rafael Montoya Pineda**[cite: 19]
+- **Juan Simón Jaramillo Henao**.
+- **Rafael Montoya Pineda**
 
 **Institución:** Universidad Nacional de Colombia - Sede Manizales  
 **Facultad:** Ingeniería y Arquitectura  
