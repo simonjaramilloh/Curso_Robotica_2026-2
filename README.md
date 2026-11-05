@@ -45,8 +45,12 @@ El repositorio está organizado en carpetas independientes para cada laboratorio
   * **Navegación Reactiva y Búsqueda:** Vehículo de Braitenberg, Bug2, A* y Transformada de Distancia.
   * **SLAM:** Mapeo de ocupación con Cartographer.
   * **Navegación Autónoma:** Localización con AMCL, mapas de costo, conductas de recuperación (*recoveries*) y evasión de obstáculos con Nav2.
+- **[Laboratorio 6](./Laboratorio_6): Localización, Estimación de Estado y SLAM.**
+  * **Odometría (Dead Reckoning):** Simulación del modelo cinemático tipo bicicleta y caracterización del crecimiento acumulativo de incertidumbre mediante matrices de covarianza de ruido.
+  * **Filtro de Kalman Extendido (EKF):** Estimación probabilística de pose, propagación temporal de covarianzas y análisis de divergencia en lazo abierto.
+  * **Corrección con Landmarks:** Integración de observaciones externas de rango y marcación (*RangeBearingSensor*) y reducción periódica de elipses de incertidumbre mediante innovación.
+  * **EKF-SLAM en Python:** Estimación simultánea en línea de la trayectoria del robot y las coordenadas de balizas desconocidas en el espacio de trabajo.
+  * **Pipeline Real en ROS 2 (Jazzy Jalisco):** Despliegue de Cartographer y simulación con TurtleBot3 Burger en Gazebo Harmonic, sincronización temporal con `/clock`, monitoreo del grafo de transformaciones (`/tf`, `map` $\rightarrow$ `odom` $\rightarrow$ `base_footprint`) y exportación de submapas de ocupación.
 
 ### 🚀 Próximos laboratorios (En desarrollo)
-
-- **[Laboratorio 6](./Laboratorio_6):** *[Espacio reservado para el próximo laboratorio.]*
 - **[Laboratorio 7](./Laboratorio_7):** *[Espacio reservado para el próximo laboratorio.]*
