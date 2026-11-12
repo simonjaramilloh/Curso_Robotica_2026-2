@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<robot name="autel_evo_max_4t">
+
+  <material name="autel_orange">
+    <color rgba="1.0 0.38 0.0 1.0"/>
+  </material>
+  <material name="carbon_dark">
+    <color rgba="0.15 0.15 0.15 1.0"/>
+  </material>
+  <material name="rotor_blue">
+    <color rgba="0.1 0.6 0.9 0.8"/>
+  </material>
+
+  <!-- Chasis central {B} -->
+  <link name="base_link">
+    <visual>
+      <geometry><box size="0.38 0.28 0.12"/></geometry>
+      <material name="autel_orange"/>
+    </visual>
+  </link>
+
+  <!-- Gimbal / Camara Termica y Optica 4T (Frontal inferior) -->
+  <link name="camera_thermal_link">
+    <visual>
+      <geometry><sphere radius="0.06"/></geometry>
+      <material name="carbon_dark"/>
+    </visual>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_thermal_link"/>
+    <origin xyz="0.18 0.0 -0.06" rpy="0 0.25 0"/>
+  </joint>
+
+  <!-- Sensor LiDAR 3D / Radar mmWave (Superior) -->
+  <link name="lidar_link">
+    <visual>
+      <geometry><cylinder radius="0.05" length="0.05"/></geometry>
+      <material name="carbon_dark"/>
+    </visual>
+  </link>
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0.0 0.0 0.085" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Sensores internos: IMU y GPS -->
+  <link name="imu_link"/>
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- 4 Rotores del Cuadricoptero -->
+  <link name="rotor_0">
+    <visual><geometry><cylinder radius="0.18" length="0.015"/></geometry><material name="rotor_blue"/></visual>
+  </link>
+  <joint name="rotor_0_joint" type="fixed">
+    <parent link="base_link"/><child link="rotor_0"/><origin xyz="0.25 0.25 0.06"/>
+  </joint>
+
+  <link name="rotor_1">
+    <visual><geometry><cylinder radius="0.18" length="0.015"/></geometry><material name="rotor_blue"/></visual>
+  </link>
+  <joint name="rotor_1_joint" type="fixed">
+    <parent link="base_link"/><child link="rotor_1"/><origin xyz="-0.25 0.25 0.06"/>
+  </joint>
+
+  <link name="rotor_2">
+    <visual><geometry><cylinder radius="0.18" length="0.015"/></geometry><material name="rotor_blue"/></visual>
+  </link>
+  <joint name="rotor_2_joint" type="fixed">
+    <parent link="base_link"/><child link="rotor_2"/><origin xyz="-0.25 -0.25 0.06"/>
+  </joint>
+
+  <link name="rotor_3">
+    <visual><geometry><cylinder radius="0.18" length="0.015"/></geometry><material name="rotor_blue"/></visual>
+  </link>
+  <joint name="rotor_3_joint" type="fixed">
+    <parent link="base_link"/><child link="rotor_3"/><origin xyz="0.25 -0.25 0.06"/>
+  </joint>
+
+</robot>
+
